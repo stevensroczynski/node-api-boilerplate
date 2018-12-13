@@ -1,0 +1,67 @@
+# Copy me one directory above where you have the API
+default:
+  ports:
+    STATIC_PORT : 5601
+    API_PORT: 1234
+    
+  systemLog:
+    transports:
+      # - type: "file"
+      #   level: "debug"
+      #   filename: "../logging/main.log"
+      #   name: debug
+      # - type: "file"
+      #   level: "error"
+      #   filename: "../logging/error.log"
+      #   name: "error"
+      - type: "console"
+
+  accessLog:
+    type: "console"
+
+  debugLog:
+    type: "console"
+
+development:
+  ports:
+    STATIC_PORT : 5601
+    API_PORT: 1234
+    
+  systemLog:
+    transports:
+      # - type: "file"
+      #   level: "debug"
+      #   filename: "../logging/main.log"
+      #   name: debug
+      # - type: "file"
+      #   level: "error"
+      #   filename: "../logging/error.log"
+      #   name: "error"
+      - type: "console"
+
+  accessLog:
+    type: "console"
+    # type: "file"    
+    # filename: "../logging/access.log"
+  
+  database:
+      username: "postgres"
+      password: "postgres"
+      database: "fom"
+      host: "localhost"
+      dialect: "postgres"
+      operatorsAliases: "false"
+
+production:
+  systemLog:
+    transports:
+      - type: "file"
+        level: "error"
+        filename: "../logging/error.log"
+        name: "error"
+  accessLog:
+    type: "file"    
+    filename: "../logging/access.log"
+
+  database:
+    dialect: "postgres"

@@ -1,0 +1,62 @@
+{
+  "name": "sroczynski-template",
+  "main": "./app.js",
+  "version": "1.0.0",
+  "private": true,
+  "bin": "./app.js",
+  "scripts": {
+    "start": "nodemon",
+    "win-build": "pkg -t latest-win-x64 -o ../binary/win-executable package.json --debug",
+    "linux-build": "pkg -t latest-linux-x64 -o ../binary/linux-executable package.json --debug",
+    "mac-build": "pkg -t latest-macos-x64 -o ../binary/macos-executable package.json --debug"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "deep-diff": "^0.3.8",
+    "express": "~4.15.5",
+    "express-http-proxy": "^1.1.0",
+    "fs": "0.0.1-security",
+    "json-cycle": "^1.3.0",
+    "jsonwebtoken": "^8.1.0",
+    "line-reader": "^0.4.0",
+    "lodash": "^4.17.4",
+    "mgrs": "^1.0.0",
+    "moment-duration-format": "^2.2.2",
+    "morgan": "~1.9.0",
+    "node": "^10.3.0",
+    "node-yaml-config": "0.0.4",
+    "nodemon": "^1.12.1",
+    "nvm": "0.0.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.83.0",
+    "sequelize": "^3.30.2",
+    "sequelize-cli": "^3.1.0",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^3.0.0",
+    "jest": "^22.0.1",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^4.1.0",
+    "node-flywaydb-nextgen": "^0.1.5",
+    "pg": "^6.4.2",
+    "pg-pool": "^2.0.3",
+    "pgtest": "^0.2.2",
+    "pkg": "^4.3.1"
+  },
+  "pkg": {
+    "assets": [
+      "dist/www/**/**/*",
+      "api/models/*",
+      "config/startupascii.txt"
+    ]
+  }
+}
